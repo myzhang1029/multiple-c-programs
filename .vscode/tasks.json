@@ -3,17 +3,14 @@
         {
             "type": "shell",
             "label": "Build this C Program",
-            "command": "gcc -fcolor-diagnostics -fansi-escape-codes -g -o ${fileDirname}/${fileBasenameNoExtension} ${file}",
+            "command": "gcc -g -o ${fileDirname}/${fileBasenameNoExtension} ${file}",
             "options": {
                 "cwd": "${fileDirname}"
             },
             "problemMatcher": [
                 "$gcc"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": false
-            }
+            "group": "build",
         },
         {
             "type": "shell",
@@ -24,7 +21,7 @@
             },
             "problemMatcher": [],
             "group": {
-                "kind": "test",
+                "kind": "build",
                 "isDefault": true
             },
             "dependsOn": "Build this C Program",
