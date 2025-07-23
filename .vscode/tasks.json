@@ -3,7 +3,7 @@
         {
             "type": "shell",
             "label": "Build this C Program",
-            "command": "cc -g -o '${fileDirname}/${fileBasenameNoExtension}' '${file}'",
+            "command": "gcc -g -o '${fileDirname}/${fileBasenameNoExtension}' '${file}'",
             "options": {
                 "cwd": "${fileDirname}"
             },
@@ -11,6 +11,20 @@
                 "$gcc"
             ],
             "group": "build",
+        },
+        {
+            "type": "process",
+            "label": "Run this C Program (Windows)",
+            "command": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "dependsOn": "Build this C Program",
         },
         {
             "type": "process",
